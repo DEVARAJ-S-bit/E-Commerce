@@ -1,289 +1,327 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce website</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>SS Fruits Shop</title>
+   <style>
+      /* General Styles */
+      body {
+         font-family: 'Arial', sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f4f4f9;
+         color: #333;
+         line-height: 1.6;
+      }
+
+      /* Header Section */
+      #Headingbox {
+         text-align: center;
+         padding: 40px;
+         margin-left:25px;
+         background: linear-gradient(to right, #ff9999, #ffcc99);
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         border-bottom: 4px solid #ff6600;
+         height:100px;
+         width:800px;
+      }
+
+      #Headingbox h1 {
+         color: #ff1a1a;
+         font-size: 3rem;
+         margin: 0;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+      }
+
+      #Headingbox h6 {
+         color: #e60073;
+         font-size: 1.2rem;
+         margin: 5px 0 0;
+         font-style: italic;
+      }
+
+      /* Marquee Animation */
+      marquee {
+         font-size: 1.5rem;
+         color: #ff6600;
+         font-weight: bold;
+         margin: 20px 0;
+      }
+
+      /* Button and Link Styles */
+      a {
+         text-decoration: none;
+         color: inherit;
+      }
+
+      a:hover {
+         color: #ff6600;
+         text-decoration: underline;
+      }
+
+      /* Fruit Gallery Section */
+      .fruit-gallery {
+         display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+         gap: 20px;
+         margin: 40px;
+      }
+
+      .fruit-item {
+         background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+         border: 2px solid #ddd;
+         border-radius: 12px;
+         overflow: hidden;
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         cursor: pointer;
+         text-align: center;
+      }
+
+      .fruit-item:hover {
+         transform: scale(1.1);
+         box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+         background: linear-gradient(to bottom, #fffae6, #ffe6cc);
+      }
+
+      .fruit-item img {
+         width: 100%;
+         height: 200px;
+         object-fit: cover;
+      }
+
+      .fruit-item a {
+         display: block;
+         padding: 10px;
+         color: #333;
+         font-weight: bold;
+         font-size: 1.1rem;
+         background-color: #fff;
+         transition: background-color 0.3s;
+      }
+
+      .fruit-item a:hover {
+         background-color: #ff6600;
+         color: #fff;
+      }
+
+      /* Footer Section */
+      #footer {
+         background-color: #333;
+         color: #f4f4f9;
+         text-align: center;
+         padding: 40px;
+         margin-top: 40px;
+         font-size: 1rem;
+      }
+
+      #footer a {
+         color: #f4f4f9;
+         text-decoration: none;
+         font-weight: bold;
+      }
+
+      #footer a:hover {
+         text-decoration: underline;
+      }
+
+      /* Custom Styles for Buttons */
+      .btn-primary {
+         background-color: #007bff;
+         color: white;
+         padding: 10px 20px;
+         border-radius: 5px;
+         transition: background-color 0.3s;
+      }
+
+      .btn-primary:hover {
+         background-color: #0056b3;
+         color: #fff;
+      }
+
+      .btn-secondary {
+         background-color: #ff6600;
+         color: white;
+         padding: 10px 20px;
+         border-radius: 5px;
+         transition: background-color 0.3s;
+      }
+
+      .btn-secondary:hover {
+         background-color: #cc5200;
+         color: #fff;
+      }
+
+      /* Responsiveness */
+      @media (max-width: 768px) {
+         #Headingbox h1 {
+            font-size: 2.5rem;
+         }
+
+         .fruit-gallery {
+            margin: 20px;
+         }
+
+         .fruit-item {
+            width: 100%;
+         }
+
+         
+         
+      }
+
+   </style>
 </head>
-<body> 
-    <div class="head">
-      <div class="container">
-        <div class="navbar">
-            <h2 class="logo"> <i>Devaraj Store</i></h2>
-        <nav>
-            <ul id="MenuItems">
-                <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">contact</a></li>
-                <li><a href="">Account</a></li>
-            </ul>
-        </nav>
-          <a href="cart.html"><img src="images/cart.png" alt="" width="30px" height="30px"></a>
-          <img src="images/menu.png" class="menu" onclick="menutoggle()">
-        </div>
-        <div class="row">
-            <div class="col-1">
-                <h1>Give Your <i>Fashion</i><br>A New Style!</h1>
-                <p>"What you wear is how you present yourself to the world,
-                     especially today, when human contacts are so quick. Fashion is instant language."</p>
-                    <a href=""class="bt">Explore Now &#8594;</a>
-            </div>
-        </div>
+<body style="background-color:#ddd;">
+
+
+
+   <!-- Header -->
+   <div id="Headingbox">
+      <h1><img src="D:\applications\ss fruit shop\FruitsImage\orange.jpeg" alt="Fruit image" style="float:left;width:100px;height:100px;">SS FRUITS SHOP</h1>
+
+      <h6><mark>FRESH FRUITS</mark></h6>
+   </div>
+
+   <!-- Marquee Notification -->
+   <marquee direction="right" behavior="alternate" style="background-color: #ffcc99;">OFFERS AVAILABLE</marquee>
+
+   <!-- Call to Action --><centre>
+   <div style="text-align: center; padding: 20px; width:250px;margin-left: 335px;">
+      <small>Click Here:</small>
+      <a href="D:\applications\ss fruit shop\BUY SS FRUIT.html" title="Go to Fruits Order Page">
+      <a href="file:///D:/applications/ss%20fruit%20shop/Order%20SS%20Fruits%20Shop.html" > <h2 class="btn-primary" style="cursor: pointer;"><b>ORDER NOW</b></h2></a> 
+      </a>
+      <h4>Home Delivery</h4>
+      
+   </div>
+   <p class="btn-secondary"   style=" width:700px;margin-left: 100px;text-align: center;">See Fruits Benefits and Vitamins</p>
+   <!-- Fruit Gallery -->
+   <div class="fruit-gallery">
+      <div class="fruit-item">
+         <a href="apple.html" title="Learn more about Apples">
+            <img src="D:\applications\ss fruit shop\FruitsImage\apple.jpeg" alt="Apple">
+            Apple
+         </a>
       </div>
-    </div>
-    <!---feature product-->
-    <div class="category">
-        <div class="s_container">
-        <div class="row">
-            <div class="col-2">
-                <img src="images/category-1.jpg" alt="">
-            </div>
-            <div class="col-2">
-                <img src="images/category-2.jpg" alt="">
-            </div>
-            <div class="col-2">
-                <img src="images/category-3.jpg" alt="">
-            </div>
-        </div>
+      <div class="fruit-item">
+         <a href="orange.html" title="Learn more about Oranges">
+            <img src="D:\applications\ss fruit shop\FruitsImage\orange.jpeg" alt="Orange">
+            Orange
+         </a>
       </div>
-    </div>
-    <!--Feautured products-->
-    <div class="s_container">
-        <h2 class="title">Feautured Products</h2>
-        <div class="row">
-            <div class="col-3">
-                <a href="product-details.html"><img src="images/product-1.jpg" alt=""></a>
-                <h4>Red Printed T-Shirt</h4>
-                <div class="rating"> 
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹299</p>
-            </div>
-            <div class="col-3">
-                <img src="images/product-2.jpg" alt="">
-                <h4>Black HRX shoe</h4>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹149</p>
-            </div>
-            <div class="col-3">
-                <img src="images/product-3.jpg" alt="">
-                <h4>Light green pant</h4>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <p>₹199</p>
-            </div>
-            <div class="col-3">
-                <img src="images/product-4.jpg" alt="">
-                <h4>Blue Printed T-shirt</h4>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹349</p>
-            </div>
-            
-        </div>
-           <h2 class="title">Latest Product</h2>
-        <div class="row">
-            <div class="col-3">
-                <img src="images/product-5.jpg" alt="">
-                <h4>Light grey shoe</h4>
-                <div class="rating"> 
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹399</p>
-            </div>
-            <div class="col-3">
-                <img src="images/product-6.jpg" alt="">
-                <h4>Dark green checked T-shirt</h4>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹249</p>
-            </div>
-            <div class="col-3">
-                <img src="images/product-7.jpg" alt="">
-                <h4>Shoe shocks </h4>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹129</p>
-            </div>
-            <div class="col-3">
-                <img src="images/product-8.jpg" alt="">
-                <h4>Bassil formal black watch</h4>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹499</p>
-            </div>
-            <div class="col-3">
-                <img src="images/product-9.jpg" alt="">
-                <h4>Dark grey colored Watch</h4>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹399</p>
-            </div>
-            <div class="col-3">
-                <img src="images/product-10.jpg" alt="">
-                <h4>Black Sports shoe</h4>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹259</p>
-            </div>
-            <div class="col-3">
-                <img src="images/product-11.jpg" alt="">
-                <h4> grey  colored shoe</h4>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹350</p>
-            </div>
-            <div class="col-3">
-                <img src="images/product-12.jpg" alt="">
-                <h4>Formal  white shoe</h4>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹449</p>
-            </div>
-            <div class="col-3">
-                <a href="product-details.html"><img src="images/category-1.jpg" alt=""></a>
-                <h4>Toaned Jeans</h4>
-                <div class="rating"> 
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹699</p>
-            </div>
-            <div class="col-3">
-                <a href="product-details.html"><img src="images/category-2.jpg" alt=""></a>
-                <h4>Branded White Shoe</h4>
-                <div class="rating"> 
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹599</p>
-            </div>
-            <div class="col-3">
-                <a href="product-details.html"><img src="images/category-3.jpg" alt=""></a>
-                <h4>Adidas Hoodie</h4>
-                <div class="rating"> 
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half"></i>
-                </div>
-                <p>₹999</p>
-            </div>
-            
-        </div>
-    </div>
-     <!---brandsssssss-->
-     <div class="brand">
-        <div class="s_container">
-            <div class="row">
-                <div class="col-4">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="">
-                </div>
-                <div class="col-4">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt55LmZZb-KUrHxUWwAnTCCd_HA35l3V1sSLoLy86_IA&s" alt="">
-                </div>
-                <div class="col-4">
-                    <img src="https://1000logos.net/wp-content/uploads/2022/08/Myntra-Logo.png" alt="">
-                </div>
-                <div class="col-4">
-                    <img src="https://1000logos.net/wp-content/uploads/2016/10/Amazon-logo-meaning.jpg" alt="">
-                </div>
-                <div class="col-4">
-                    <img src="https://1000logos.net/wp-content/uploads/2021/02/Flipkart-logo.png" alt="">
-                </div>
-            </div>
-        </div>
-     </div>
-     <!---footer-->
-     <div class="footer">
-        <div class="s_container">
-            <div class="row">
-                <div class="foot-1">
-                    <h3>Download Our App</h3>
-                    <p>Download App for Andriod and ios mobile phone</p>
-                    <div class="app-logo">
-                        <img src="images/play-store.png" alt="playstore img">
-                        <img src="images/app-store.png" alt="app store img">
-                    </div>
-                </div>
-                <div class="foot-2">
-                    <h2 class="f">Devaraj's Store</h2>
-                    <p>Our purpose to Make the Sports Accessible to Many people</p>
-                </div>
-                <div class="foot-3">
-                    <h3>Usefull links</h3>
-                    <ul>
-                        <li>Coupons</li>
-                        <li>Blog post</li>
-                        <li>Replacement policy</li>
-                        <li>Return policy </li>
-                    </ul>
-                </div>
-                <div class="foot-4">
-                    <h3>Follow Us</h3>
-                    <ul>
-                        <a href=""><li>Facebbok</li></a>
-                        <a href=""><li>Instagram</li></a>
-                        <a href=""><li>Youtube</li></a>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <p class="copyright">copyright @2024</p>
-        </div>
-     </div>
-       <script src="script.js"></script>  
+      <div class="fruit-item">
+         <a href="banana.html" title="Learn more about Bananas">
+            <img src="D:\applications\ss fruit shop\FruitsImage\banana.jpeg" alt="Banana">
+            Banana
+         </a>
+      </div>
+      <div class="fruit-item">
+         <a href="grapes.html" title="Learn more about Grapes">
+            <img src="D:\applications\ss fruit shop\FruitsImage\grapes.jpeg" alt="Grapes">
+            Grapes
+         </a>
+      </div>
+      <div class="fruit-item">
+         <a href="mango.html" title="Learn more about Mangoes">
+            <img src="D:\applications\ss fruit shop\FruitsImage\mango.jpeg" alt="Mango">
+            Mango
+         </a>
+      </div>
+      <div class="fruit-item">
+         <a href="papaya.html" title="Learn more about Papayas">
+            <img src="D:\applications\ss fruit shop\FruitsImage\papaya.jpeg" alt="Papaya">
+            Papaya
+         </a>
+      </div>
+      <div class="fruit-item">
+         <a href="strawberry.html" title="Learn more about Strawberries">
+            <img src="D:\applications\ss fruit shop\FruitsImage\strawberry.jpeg" alt="Strawberry">
+            Strawberry
+         </a>
+      </div>
+      <div class="fruit-item">
+         <a href="kiwi.html" title="Learn more about Kiwis">
+            <img src="D:\applications\ss fruit shop\FruitsImage\kiwi.jpeg" alt="Kiwi">
+            Kiwi
+         </a>
+      </div>
+      <div class="fruit-item">
+         <a href="blueberry.html" title="Learn more about Blueberries">
+            <img src="D:\applications\ss fruit shop\FruitsImage\blueberry.jpeg" alt="Blueberry">
+            Blueberry
+         </a>
+      </div>
+      <div class="fruit-item">
+         <a href="pineapple.html" title="Learn more about Pineapples">
+            <img src="D:\applications\ss fruit shop\FruitsImage\pineapple.jpeg" alt="Pineapple">
+            Pineapple
+         </a>
+      </div>
+      <div class="fruit-item">
+         <a href="watermelon.html" title="Learn more about Watermelons">
+            <img src="D:\applications\ss fruit shop\FruitsImage\watermelon.jpeg" alt="Watermelon">
+            Watermelon
+         </a>
+      </div>
+      <div class="fruit-item">
+         <a href="pear.html" title="Learn more about Pears">
+            <img src="D:\applications\ss fruit shop\FruitsImage\pear.jpeg" alt="Pear">
+            Pear
+         </a>
+      </div>
+</div>
+
+
+
+
+           <!---footer-->
+   <footer>
+     <div class="footer" style="background-color: black;width:919px;color: #f4f4f9;">
+      <div class="s_container" style="margin: 40px;">
+          <div class="row">
+              <div class="foot-1" style=" float: left;">
+                  <h3>Download Our App</h3>
+                  <p>Download App for Andriod and ios mobile phone</p>
+                  <div class="app-logo"style=" float: left;">
+                      <img src="images/play-store.png" alt="playstore img">
+                      <img src="images/app-store.png" alt="app store img">
+                  </div>
+              </div>
+              <div class="foot-2" style=" float: left;margin: 40px;">
+                  <h2 class="f">SS FRUITS SHOP STORE</h2>
+                  <p><pre>      Order the Fruits and Enjoy it.
+              HOME DELIVERY<pre></p>
+              </div>
+              <div class="foot-3">
+               <br>
+                  <h3>AVAILABLE</h3>
+                  <ul>
+                      <li>Coupons</li>
+                      <li>Replacement policy</li>
+                      <li>Return policy </li>
+                  </ul>
+              </div>
+              <br> <br>
+              <div class="foot-4">
+                  <h3>     Follow Us</h3>
+                  <ul>
+                      
+                      <a href=""><li>Instagram</li></a>
+                      <a href=""><li>Youtube</li></a>
+                  </ul>
+              </div>
+          </div>
+          <hr>
+          <p style="text-align: center;">&copy; 2024 SS Fruits Shop. All rights reserved.</p>
+      </div>
+   </div>
+</footer></body>
+   <html.
+
+
+
+
     
-</body>
-</html>
